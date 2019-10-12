@@ -34,4 +34,10 @@ var questions = [
 //ensures code will run once the entire page & DOM are ready
 $(document).ready(function () {
 
+    //When the page loads, you want to hide quiz, results and scoreboard
+
+    $(".quiz").hide();
+    $(".results").hide();
+    $(".final").hide();
+
 });
