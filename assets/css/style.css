@@ -1,9 +1,21 @@
 * {
-    box-sizing: border-box;
+    text-align: center;
+}
+
+header {
+    padding: 10px
+}
+
+.view-scores {
+    float: left;
+}
+
+.time {
+    float: right;
 }
 
 .card {
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     margin: 20px;
 }
 
