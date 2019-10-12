@@ -34,4 +34,4 @@ var questions = [
 //ensures code will run once the entire page & DOM are ready
 $(document).ready(function () {
 
-}
+});
