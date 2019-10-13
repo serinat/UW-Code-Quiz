@@ -127,7 +127,6 @@ function checkAnswer(guess) {
 
     } else {
         $("#alert").append("Wrong!" + "<br>");
-
     }
     currentQuestion++;
     if (currentQuestion >= questions.length) {
