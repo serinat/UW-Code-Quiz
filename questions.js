@@ -40,4 +40,12 @@ $(document).ready(function () {
     $(".results").hide();
     $(".final").hide();
 
+    //add event listener on start quiz button
+    $(".start button").on("click", function (event) {
+        event.preventDefault();
+        $(".start").hide();
+        $(".quiz").show();
+        displayQuestion();
+    }
+    );
 });
