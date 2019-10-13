@@ -2,6 +2,8 @@
 var score = 0;
 //keeping track of questions
 var currentQuestion = 0;
+//timer
+var timeElement = document.querySelector(".time");
 //store questions in an array
 var questions = [
     {
@@ -23,7 +25,7 @@ var questions = [
         title: "What is my favorite fast-food restaurant?",
         choices: ["Chick Fil A", "Burger King", "McDonalds", "I don't do fast-food"],
         answer: 2
-    },
+    },   
     {
         title: "Where is my favorite place to be, in order from most favorite to least favorite?",
         choices: ["Hawaii, LA, Home, Any place with good food", "Any place with good food, Home, Hawaii, LA", "LA, Hawaii, Any place with good food", "Home, Any place with good food, Hawaii, LA"],
@@ -68,7 +70,8 @@ $("#submit").on("click", function (event) {
     var initials = document.querySelector("#initial").value;
 
     if (initials === "") {
-        displayMessage("error", "Initial cannot be blank");
+        alert("Please enter initials");
+        return false;
     } else {
         localStorage.setItem("initial", initials);
     }
@@ -88,12 +91,25 @@ $("#clear").on("click", function (event) {
     $(".view-scores li").html("");
 });
 
-$(".view-scores").on("click", function (event) {
+$("header a").on("click", function (event) {
     displayScore();
 })
 
 //function to display one question at a time
 function displayQuestion() {
+    var count = 15;
+    var timer = setInterval (function() {
+        count--;
+        timeElement.textContent = "Time: " + count;
+        if (count === 0) {
+            stopInterval();
+        }
+    }, 1000);
+
+    var stopInterval = function() {
+        clearInterval(timer);
+    }
+
     var question = questions[currentQuestion];
     $(".quiz h3").text(question.title);
     $(".quiz ul").html("");
@@ -124,7 +140,7 @@ function checkAnswer(guess) {
 function showResults() {
     $(".quiz").hide();
     $(".results").show();
-    $(".results p").text("Yay! You scored " + score + " out of " + questions.length + " correct!")
+    $(".results p").text("Yay! You scored " + score + " out of " + questions.length + " correct!");
 }
 
 //function to display scores
@@ -143,6 +159,5 @@ function restart() {
     score = 0;
     currentQuestion = 0;
     $("#alert").html("");
-    $("#initial").html("");
     displayQuestion();
 }
