@@ -41,7 +41,7 @@
                     <li>Choice</li>
                 </ul>
                 <hr>
-                Insert alert here
+                <p id="alert"></p>
             </div>
         </div>
     </div>
@@ -49,13 +49,13 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">You're done!</h3>
-                <p>You scored this many correct</p>
+                <p>You scored x out of y correct</p>
                 <form>
                     <div class="form-group">
                         <strong><label for="exampleFormControlInput1">Enter Initials</label></strong>
-                        <input type="text" class="form-control" id="inital" placeholder="for example: ST"></select>
+                        <input type="text" class="form-control" id="initial" placeholder="for example: ST"></select>
                     </div>
-                    <button type="button" class="btn btn-outline-success">Submit</button>
+                    <button type="button" class="btn btn-outline-success" id="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -65,8 +65,8 @@
             <div class="card-body">
                 <h3 class="card-title">Scoreboard</h3>
                 <ul class="highScore"></ul>
-                <button type="button" class="btn btn-outline-warning">Try Again</button>
-                <button type="button" class="btn btn-outline-dark">Clear Scoreboard</button>
+                <button type="button" class="btn btn-outline-warning" id="restart">Try Again</button>
+                <button type="button" class="btn btn-outline-dark" id="clear">Clear Scoreboard</button>
 
             </div>
         </div>

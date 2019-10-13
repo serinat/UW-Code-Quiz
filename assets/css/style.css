@@ -6,8 +6,22 @@ header {
     padding: 10px
 }
 
+li {
+    list-style-type: none;
+    background-color: palegoldenrod;
+    border: dotted;
+}
+
+li:hover {
+    background-color: lightskyblue;
+}
+
 .view-scores {
     float: left;
+}
+
+.view-scores li {
+    border: none;
 }
 
 .time {
@@ -30,4 +44,22 @@ header {
 #img {
     background-size: 100% auto;
     opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  
+    .wrapper {
+      width: 100%;
+      padding: 20px;
+      margin: 20px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+  
+    .wrapper {
+      width: 100%;
+      padding: 20px;
+      margin: 0;
+    }
 }
